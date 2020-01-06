@@ -1,0 +1,163 @@
+The python standard library   python标准库
+python语言参考手册描述准确的python语言的语法和语义，这一库参考手册描述了与python一起发布的标准库。它也描述了一些可选的组成，它们通常包含在python的发布中。
+
+python的标准库是非常广泛的，提供了一个宽泛的设施，其被通过下面的一个长的列表表示出来。库包含了内建的模块（用c语言写的），其提供了一个到系统功能的通道，例如文件的I/O，
+其是不可得的，对于python程序员，和使用python写的模块，其提供了标准化的解决方案，对于每天编程中发生的许多问题。这些模块中的一些被明显地设计，用于鼓励和加强python程序的端口，
+通过提取平台的说明到平台的中性的API函数。
+
+对于windows平台的python安装者，通常包含整个标准库和通常也包含许多附加的组成。对于类unix操作系统，python通常被提供，做为一个包的集合，因此，它是必需的去使用操作系统相关的包的工具，
+以得到一些或者所有的可得的组成。
+
+在标准库之外，有一个正在发展的上千种组成的集合（从个人程序和模块到包，和整个应用开发框架），从python包的索引中可以得到。
+
+简介
+   可得的说明
+内建的函数
+内建的常数
+   通过网址模块增加的常数
+内建的类型
+    真值的测试
+    布尔操作——and，or，not
+    比较
+    数值类型——int，float，complex
+    迭代类型
+    顺序类型——list，tuple，range
+    文本顺序类型——str
+    二进制顺序类型——bytes，bytearray，memoryview
+    集合类型——set，frozenset
+    映射类型——dict
+    上下文管理类型
+    其它内建类型
+    特殊属性
+ 内建的异常
+    基本类
+    具体的异常
+    警告
+    异常的等级
+  文档处理服务
+    string —— 通常的字符操作
+    re—— 正则表达式操作
+    difflib —— 计算差异的帮助
+    textwrap —— 文档的替换和填充
+    unicodedata —— unicode数据集
+    stringprep —— 网络字符准备
+    readline —— GNU读一行的界面
+    rlcompleter —— GNU读一行的完整函数
+  二进制数据服务
+    struct —— 说明字节作为打包的二进制数据
+    codecs —— 编码译码器寄存器和基本类
+  数据类型
+    datetime —— 基本的日期和时间类型
+    calendar —— 一般的与日期相关的函数
+    collections —— 容器数据类型
+    collections.abc —— 用于容器的抽象基本类型
+    heapq —— 堆的顺序算法
+    bisection —— 数组的二分算法
+    array —— 数值的有效算法
+    weakref —— 弱的参考
+    types —— 动态类型创建和名字，用于内建类型
+    copy —— 浅和深复制操作
+    pprint —— 数据好的打印
+    reprlib —— 可选择的repr()的施行
+    enum —— 支持枚举
+  数值和数学模块
+    numbers —— 数值的基本数据类
+    math —— 数学函数
+    cmath —— 数学函数，用于复数
+    decimal —— 十进制固定点和浮点运算
+    fractions —— 有理数
+    random —— 一般的伪随机数
+    statistics —— 数学的统计函数
+  函数程序模块
+    itertools —— 函数创建迭代器，用于有效的循环
+    functools —— 高等级的函数和操作，对于可调用的对象
+    operator —— 标准的函数操作
+  文件和目录的获得
+    pathlib —— 面向对香文件系统的路径
+    os.path —— 一般的路径名称操作
+    fileinput —— 多行迭代，从多个输入中
+    stat —— 说明stat()的结果
+    filecmp —— 文件和目录的比较
+    tempfile —— 一般的临时文件和目录
+    glob —— unix风格路径格式扩展
+    fnmatch —— unix文件名格式匹配
+    linecache —— 随机得到文本行
+    shutil —— 高等级文件操作
+  数据持久化
+    pickle —— python对象序列化
+    copyreg —— 寄存pickle支持的函数
+    shelve —— python对象持久化
+    marshal —— python对象之间的序列化
+    dbm —— unix数据集的界面
+    sqlite3 —— DB-API 2.0界面，用于SQLite数具集
+  数据比较和归档
+    zlib —— 与gzip兼容的压缩
+    gzip —— 支持gzip文件
+    bz2 —— 支持bzip2压缩
+    lzma —— 使用LZMA算法压缩
+    zipfile —— 使用ZIP归档
+    tarfile —— 读和写tar规档文件
+  文件格式
+    csv —— CSV文件的读和写
+    configparser —— 配置文件解析
+    netrc —— netrc文件处理
+    xdrlib —— 编码和解码xdr数据
+    plistlib —— 生成和解析Mac OS X.plist文件
+  密码学服务
+    hashlib —— 安全哈希和信息摘要
+    hmac —— 键值-哈希，用于信息认证
+    secrets —— 生成安全随机数，用于管理密码
+  一般操作系统服务
+    os —— 各种各样的操作系统界面
+    io —— 核心工具，用于流的操作
+    time —— 时间获取和转化
+    argparse —— 解析器，用于命令行，参数和子命令
+    getopt —— C风格解析器，用于命令行选项
+    logging —— 日志设施，用于python
+    logging.config —— 日志配置
+    logging.handlers —— 日志处理器
+    getpass —— 端口的密码输入
+    curses —— 终端处理，用于字符集显示
+    curses.textpad —— 文本输入宽度，用于游标程序
+    curses.ascii —— ASCII字符的设施
+    curses.panel —— 一个板栈的扩展，用于游标
+    platform —— 强调平台区分数据的通道
+    errno —— 标准的errno系统符号
+    ctypes —— 一个外部函数库，用于python
+  当前的执行
+    threading —— 基于线程的并行
+    multiprocessing —— 基于进程的并行
+    multiprocessing.shared_memory —— 提供共享内存，用于不同进程之间
+    The concurrent package —— 当前的包
+    concurrent.futures —— 进行平行的任务
+    subprocess —— 子进程管理
+    sched —— 事件处理器
+    queue —— 一个异步顺序类
+    _thread —— 低等级的线程API
+    _dummy_thread —— 可替换的位置，用于_thread模块
+    dummy_threading —— 可替换的位置，用于threading模块
+  contextvars 
+    Context Variables —— 上下文变量
+    Manual Context Management —— 手动上下文管理
+    asyncio support —— 异步IO支持
+  网络和进程之间的通信
+    asyncio —— 异步I/O
+    socket —— 低等级网络界面
+    ssl —— TLS/SSL包装，用于套接字对象
+    select —— 等待 I/O完成
+    selectors —— 高等级I/O多路复用
+    asyncore —— 异步套接字处理
+    asynchat —— 异步套接字命令/回应处理
+    signal —— 设置处理器，用于异步事件
+    mmap —— 内存映射文件支持
+  网络数据处理
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
